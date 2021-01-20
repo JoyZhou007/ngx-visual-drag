@@ -1,0 +1,7 @@
+<div class="component-list">
+    <div *ngFor="let item of componentList; index as i" class="list" draggable="true"
+        (dragstart)="handleDragStart($event)" [attr.data-index]="i">
+        <i class="{{item.icon}}"></i>
+        <span>{{ item.label }}</span>
+    </div>
+</div>

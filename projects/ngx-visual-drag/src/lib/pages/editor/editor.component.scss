@@ -1,0 +1,12 @@
+.editor {
+    position: relative;
+    background: #fff;
+    flex-shrink: 0;
+}
+.edit {
+    .component {
+        outline: none;
+        width: 100%;
+        height: 100%;
+    }
+}

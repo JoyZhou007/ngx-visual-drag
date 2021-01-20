@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "ngx-visual-drag": {
+      "projectType": "library",
+      "root": "projects/ngx-visual-drag",
+      "sourceRoot": "projects/ngx-visual-drag/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-visual-drag/tsconfig.lib.json",
+            "project": "projects/ngx-visual-drag/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-visual-drag/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-visual-drag/src/test.ts",
+            "tsConfig": "projects/ngx-visual-drag/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-visual-drag/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-visual-drag/tsconfig.lib.json",
+              "projects/ngx-visual-drag/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "visual-drag-demo"

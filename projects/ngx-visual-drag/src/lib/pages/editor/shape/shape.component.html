@@ -1,0 +1,8 @@
+<div class="shape" [ngStyle]="getShapeStyle(defaultStyle)" [class.active]="active" (click)="selectCurComponent($event)"
+    (mousedown)="handleMouseDownOnShape($event)">
+    <i class="el-icon-refresh-right" *ngIf="active" (mousedown)="handleRotate()"></i>
+    <div class="shape-point" *ngFor="let item of (active? pointList : [])"
+        (mousedown)="handleMouseDownOnPoint(item, $event)" [ngStyle]="getPointStyle(item)">
+    </div>
+    <ng-content></ng-content>
+</div>
