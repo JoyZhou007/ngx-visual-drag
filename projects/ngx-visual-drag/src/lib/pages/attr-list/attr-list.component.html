@@ -1,0 +1,32 @@
+<div class="attr-list">
+    <div nz-row *ngFor="let key of styleKeys" class="mb-10">
+        <div nz-col nzSpan="24" class="mb-10">{{map[key]}}</div>
+        <div nz-col nzSpan="24">
+            <div [ngSwitch]="key">
+                <div *ngSwitchCase="'borderColor'"><input type="color"
+                        [(ngModel)]="componentDataService.curComponent.style[key]"></div>
+                <div *ngSwitchCase="'color'"><input type="color"
+                        [(ngModel)]="componentDataService.curComponent.style[key]"></div>
+                <div *ngSwitchCase="'backgroundColor'"><input type="color"
+                        [(ngModel)]="componentDataService.curComponent.style[key]"></div>
+                <div *ngSwitchCase="'textAlign'">
+                    <nz-select [(ngModel)]="componentDataService.curComponent.style[key]" style="width: 100%;">
+                        <nz-option [nzValue]="item.value" [nzLabel]="item.label" *ngFor="let item of options">
+                        </nz-option>
+                    </nz-select>
+                </div>
+                <div *ngSwitchDefault>
+                    <input nz-input type="number" [(ngModel)]="componentDataService.curComponent.style[key]">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div nz-row
+        *ngIf="componentDataService.curComponent && !excludes.includes(componentDataService.curComponent.component)">
+        <div nz-col nzSpan="24" class="mb-10">内容</div>
+        <div nz-col nzSpan="24">
+            <textarea nz-input [(ngModel)]="componentDataService.curComponent.propValue"
+                [nzAutosize]="{ minRows: 2, maxRows: 6 }"></textarea>
+        </div>
+    </div>
+</div>

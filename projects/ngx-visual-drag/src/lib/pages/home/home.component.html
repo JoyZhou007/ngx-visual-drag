@@ -8,7 +8,8 @@
         </section>
         <!-- 中间画布 -->
         <section class="center">
-            <div class="content" (drop)="handleDrop($event)" (dragover)="handleDragOver($event)" (click)="deselectCurComponent()">
+            <div class="content" (drop)="handleDrop($event)" (dragover)="handleDragOver($event)"
+                (click)="deselectCurComponent()">
                 <editor></editor>
             </div>
         </section>
@@ -28,6 +29,17 @@
                     <p v-else class="placeholder">请选择组件</p>
                 </el-tab-pane>
             </el-tabs> -->
+            <nz-tabset>
+                <nz-tab nzTitle="属性">
+                    <Attr-list *ngIf="!!componentDataService.curComponent"></Attr-list>
+                </nz-tab>
+                <nz-tab nzTitle="Tab 2">
+                    Content of Tab Pane 2
+                </nz-tab>
+                <nz-tab nzTitle="Tab 3">
+                    Content of Tab Pane 3
+                </nz-tab>
+            </nz-tabset>
         </section>
     </main>
 </div>

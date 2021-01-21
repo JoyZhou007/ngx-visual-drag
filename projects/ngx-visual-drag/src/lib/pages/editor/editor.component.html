@@ -5,7 +5,8 @@
         [active]="item.id === componentDataService?.curComponent?.id" [element]="item" [index]="i">
         <ng-container [ngSwitch]="item.component">
             <ng-container *ngSwitchCase="'v-button'">
-                <v-button class="component" [propValue]="item.propValue"></v-button>
+                <v-button class="component" [propValue]="item.propValue" [vStyle]="getComponentStyle(item.style)">
+                </v-button>
             </ng-container>
             <ng-container *ngSwitchCase="'v-text'">
 

@@ -65,7 +65,7 @@ export class ShapeComponent implements OnInit {
     }
 
     if (result.rotate) {
-      result.transform = 'rotate(' + result.rotate + 'deg)';
+      result['transform'] = 'rotate(' + result.rotate + 'deg)';
     }
 
     return result;

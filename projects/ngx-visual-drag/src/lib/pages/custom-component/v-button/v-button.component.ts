@@ -8,9 +8,8 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class VButtonComponent implements OnInit {
   @Input() propValue: string = '';
-  constructor() { }
+  @Input() vStyle = {};
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

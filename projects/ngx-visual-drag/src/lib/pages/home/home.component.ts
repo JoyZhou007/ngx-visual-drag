@@ -11,7 +11,7 @@ import { deepCopy } from '../../utils/utils';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
-  constructor(private componentDataService: ComponentDataService) {}
+  constructor(public componentDataService: ComponentDataService) {}
 
   ngOnInit(): void {}
 
