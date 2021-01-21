@@ -9,6 +9,7 @@ import { ShapeComponent } from './pages/editor/shape/shape.component';
 import { VButtonComponent } from './pages/custom-component/v-button/v-button.component';
 import { ContextMenuComponent } from './pages/editor/context-menu/context-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarklineComponent } from './pages/editor/markline/markline.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShapeComponent,
     VButtonComponent,
     ContextMenuComponent,
+    MarklineComponent,
   ],
   imports: [BrowserAnimationsModule, SharedModule],
   exports: [NgxVisualDragComponent],

@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ComponentDataService } from '../../../core/component/component-data.service';
 import {
@@ -106,12 +107,19 @@ export class ShapeComponent implements OnInit {
       //   // curX - startX > 0 true 表示向右移动 false 表示向左移动
       //   eventBus.$emit('move', curY - startY > 0, curX - startX > 0);
       // })
+      this.componentDataService.notification.next({
+        event: 'move',
+        value: [curY - startY > 0, curX - startX > 0],
+      });
     };
 
     const up = () => {
       hasMove && this.componentDataService.recordSnapshot();
       // 触发元素停止移动事件，用于隐藏标线
       // eventBus.$emit('unmove')
+      this.componentDataService.notification.next({
+        event: 'unmove',
+      });
       document.removeEventListener('mousemove', move);
       document.removeEventListener('mouseup', up);
     };

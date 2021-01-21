@@ -1,0 +1,9 @@
+<div class="mark-line">
+    <ng-container *ngFor="let line of lines">
+        <div class="line " #lines [ngClass]="{
+             'xline': line.includes('x'),
+             'yline': line.includes('y')
+        }" [attr.data-index]="line" [hidden]="!lineStatus[line]"></div>
+    </ng-container>
+
+</div>

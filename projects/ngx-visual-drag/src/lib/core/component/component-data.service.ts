@@ -31,6 +31,10 @@ export class ComponentDataService {
   }; // 右击菜单数据
   snapshotData: Array<ComponentDataType[]> = []; // 编辑器快照数据
   snapshotIndex: number = -1; // 快照索引
+  notification: Subject<{
+    event: string;
+    value?: any;
+  }> = new Subject();
   constructor(private message: NzMessageService) {
     this.initData();
     this.shapeStyle.subscribe((x) => {
@@ -92,5 +96,9 @@ export class ComponentDataService {
       this.componentData =
         deepCopy(this.snapshotData[this.snapshotIndex]) || [];
     }
+  }
+
+  setShapePosStyle({ key, value }) {
+    this.curComponent.style[key] = value;
   }
 }
