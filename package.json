@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build ngx-visual-drag --prod",
+    "release": "cd projects/ngx-visual-drag && npm publish",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

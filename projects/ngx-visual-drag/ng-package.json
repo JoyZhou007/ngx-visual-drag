@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-visual-drag",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["ng-zorro-antd"]
 }
