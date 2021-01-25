@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:lib": "ng build ngx-visual-drag --prod",
+    "build": "ng build --prod",
+    "build:lib": "ng build ngx-visual-drag --prod --buildOptimizer --aot",
     "release": "cd projects/ngx-visual-drag && npm publish",
     "test": "ng test",
     "lint": "ng lint",

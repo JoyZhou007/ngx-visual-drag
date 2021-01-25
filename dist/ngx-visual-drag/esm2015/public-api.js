@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of ngx-visual-drag
+ */
+export * from './lib/ngx-visual-drag.service';
+export * from './lib/ngx-visual-drag.component';
+export * from './lib/ngx-visual-drag.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIuLi8uLi8uLi9wcm9qZWN0cy9uZ3gtdmlzdWFsLWRyYWcvc3JjLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyxpQ0FBaUMsQ0FBQztBQUNoRCxjQUFjLDhCQUE4QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZ3gtdmlzdWFsLWRyYWdcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtdmlzdWFsLWRyYWcuc2VydmljZSc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtdmlzdWFsLWRyYWcuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL25neC12aXN1YWwtZHJhZy5tb2R1bGUnO1xuIl19

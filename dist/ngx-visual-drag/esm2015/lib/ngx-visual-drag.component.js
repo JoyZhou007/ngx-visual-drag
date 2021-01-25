@@ -1,0 +1,29 @@
+import { Component, EventEmitter, Input, Output, ViewEncapsulation, } from '@angular/core';
+import { ComponentDataService } from './core/component/component-data.service';
+export class NgxVisualDragComponent {
+    constructor(componentDataService) {
+        this.componentDataService = componentDataService;
+        this.onDataSave = new EventEmitter();
+    }
+    ngOnInit() {
+        this.componentDataService.$storageData.subscribe((x) => {
+            this.onDataSave.emit(x);
+        });
+    }
+}
+NgxVisualDragComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'lib-ngx-visual-drag',
+                template: ` <lib-home [data]="data"></lib-home> `,
+                encapsulation: ViewEncapsulation.None,
+                styles: ["@import \"~ng-zorro-antd/ng-zorro-antd.min.css\";.mt-10{margin-top:10px!important}.mt-11{margin-top:11px!important}.mt-12{margin-top:12px!important}.mt-13{margin-top:13px!important}.mt-14{margin-top:14px!important}.mt-15{margin-top:15px!important}.mt-16{margin-top:16px!important}.mt-17{margin-top:17px!important}.mt-18{margin-top:18px!important}.mt-19{margin-top:19px!important}.mt-20{margin-top:20px!important}.mt-21{margin-top:21px!important}.mt-22{margin-top:22px!important}.mt-23{margin-top:23px!important}.mt-24{margin-top:24px!important}.mt-25{margin-top:25px!important}.mt-26{margin-top:26px!important}.mt-27{margin-top:27px!important}.mt-28{margin-top:28px!important}.mt-29{margin-top:29px!important}.mr-10{margin-right:10px!important}.mr-11{margin-right:11px!important}.mr-12{margin-right:12px!important}.mr-13{margin-right:13px!important}.mr-14{margin-right:14px!important}.mr-15{margin-right:15px!important}.mr-16{margin-right:16px!important}.mr-17{margin-right:17px!important}.mr-18{margin-right:18px!important}.mr-19{margin-right:19px!important}.mr-20{margin-right:20px!important}.mr-21{margin-right:21px!important}.mr-22{margin-right:22px!important}.mr-23{margin-right:23px!important}.mr-24{margin-right:24px!important}.mr-25{margin-right:25px!important}.mr-26{margin-right:26px!important}.mr-27{margin-right:27px!important}.mr-28{margin-right:28px!important}.mr-29{margin-right:29px!important}.mb-10{margin-bottom:10px!important}.mb-11{margin-bottom:11px!important}.mb-12{margin-bottom:12px!important}.mb-13{margin-bottom:13px!important}.mb-14{margin-bottom:14px!important}.mb-15{margin-bottom:15px!important}.mb-16{margin-bottom:16px!important}.mb-17{margin-bottom:17px!important}.mb-18{margin-bottom:18px!important}.mb-19{margin-bottom:19px!important}.mb-20{margin-bottom:20px!important}.mb-21{margin-bottom:21px!important}.mb-22{margin-bottom:22px!important}.mb-23{margin-bottom:23px!important}.mb-24{margin-bottom:24px!important}.mb-25{margin-bottom:25px!important}.mb-26{margin-bottom:26px!important}.mb-27{margin-bottom:27px!important}.mb-28{margin-bottom:28px!important}.mb-29{margin-bottom:29px!important}.ml-10{margin-left:10px!important}.ml-11{margin-left:11px!important}.ml-12{margin-left:12px!important}.ml-13{margin-left:13px!important}.ml-14{margin-left:14px!important}.ml-15{margin-left:15px!important}.ml-16{margin-left:16px!important}.ml-17{margin-left:17px!important}.ml-18{margin-left:18px!important}.ml-19{margin-left:19px!important}.ml-20{margin-left:20px!important}.ml-21{margin-left:21px!important}.ml-22{margin-left:22px!important}.ml-23{margin-left:23px!important}.ml-24{margin-left:24px!important}.ml-25{margin-left:25px!important}.ml-26{margin-left:26px!important}.ml-27{margin-left:27px!important}.ml-28{margin-left:28px!important}.ml-29{margin-left:29px!important}.absoulte{position:absolute}"]
+            },] }
+];
+NgxVisualDragComponent.ctorParameters = () => [
+    { type: ComponentDataService }
+];
+NgxVisualDragComponent.propDecorators = {
+    data: [{ type: Input }],
+    onDataSave: [{ type: Output }]
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LXZpc3VhbC1kcmFnLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIuLi8uLi8uLi9wcm9qZWN0cy9uZ3gtdmlzdWFsLWRyYWcvc3JjLyIsInNvdXJjZXMiOlsibGliL25neC12aXN1YWwtZHJhZy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUNMLFNBQVMsRUFDVCxZQUFZLEVBQ1osS0FBSyxFQUVMLE1BQU0sRUFDTixpQkFBaUIsR0FDbEIsTUFBTSxlQUFlLENBQUM7QUFDdkIsT0FBTyxFQUFFLG9CQUFvQixFQUFFLE1BQU0seUNBQXlDLENBQUM7QUFTL0UsTUFBTSxPQUFPLHNCQUFzQjtJQUdqQyxZQUFvQixvQkFBMEM7UUFBMUMseUJBQW9CLEdBQXBCLG9CQUFvQixDQUFzQjtRQURwRCxlQUFVLEdBQUcsSUFBSSxZQUFZLEVBQWUsQ0FBQztJQUNVLENBQUM7SUFFbEUsUUFBUTtRQUNOLElBQUksQ0FBQyxvQkFBb0IsQ0FBQyxZQUFZLENBQUMsU0FBUyxDQUFDLENBQUMsQ0FBQyxFQUFFLEVBQUU7WUFDckQsSUFBSSxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLENBQUM7UUFDMUIsQ0FBQyxDQUFDLENBQUM7SUFDTCxDQUFDOzs7WUFmRixTQUFTLFNBQUM7Z0JBQ1QsUUFBUSxFQUFFLHFCQUFxQjtnQkFDL0IsUUFBUSxFQUFFLHVDQUF1QztnQkFFakQsYUFBYSxFQUFFLGlCQUFpQixDQUFDLElBQUk7O2FBQ3RDOzs7WUFSUSxvQkFBb0I7OzttQkFVMUIsS0FBSzt5QkFDTCxNQUFNIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcbiAgQ29tcG9uZW50LFxuICBFdmVudEVtaXR0ZXIsXG4gIElucHV0LFxuICBPbkluaXQsXG4gIE91dHB1dCxcbiAgVmlld0VuY2Fwc3VsYXRpb24sXG59IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgQ29tcG9uZW50RGF0YVNlcnZpY2UgfSBmcm9tICcuL2NvcmUvY29tcG9uZW50L2NvbXBvbmVudC1kYXRhLnNlcnZpY2UnO1xuaW1wb3J0IHsgU3RvcmFnZURhdGEgfSBmcm9tICcuL3R5cGVzL2NvbXBvbmVudC10eXBlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnbGliLW5neC12aXN1YWwtZHJhZycsXG4gIHRlbXBsYXRlOiBgIDxsaWItaG9tZSBbZGF0YV09XCJkYXRhXCI+PC9saWItaG9tZT4gYCxcbiAgc3R5bGVVcmxzOiBbJy4vaW5kZXguc2NzcyddLFxuICBlbmNhcHN1bGF0aW9uOiBWaWV3RW5jYXBzdWxhdGlvbi5Ob25lLFxufSlcbmV4cG9ydCBjbGFzcyBOZ3hWaXN1YWxEcmFnQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcbiAgQElucHV0KCkgZGF0YTogU3RvcmFnZURhdGE7XG4gIEBPdXRwdXQoKSBvbkRhdGFTYXZlID0gbmV3IEV2ZW50RW1pdHRlcjxTdG9yYWdlRGF0YT4oKTtcbiAgY29uc3RydWN0b3IocHJpdmF0ZSBjb21wb25lbnREYXRhU2VydmljZTogQ29tcG9uZW50RGF0YVNlcnZpY2UpIHt9XG5cbiAgbmdPbkluaXQoKTogdm9pZCB7XG4gICAgdGhpcy5jb21wb25lbnREYXRhU2VydmljZS4kc3RvcmFnZURhdGEuc3Vic2NyaWJlKCh4KSA9PiB7XG4gICAgICB0aGlzLm9uRGF0YVNhdmUuZW1pdCh4KTtcbiAgICB9KTtcbiAgfVxufVxuIl19

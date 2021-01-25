@@ -1,0 +1,20 @@
+{
+  "name": "ngx-visual-drag",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9"
+  },
+  "dependencies": {
+    "ng-zorro-antd": "^11.0.2",
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/ngx-visual-drag.umd.js",
+  "module": "fesm2015/ngx-visual-drag.js",
+  "es2015": "fesm2015/ngx-visual-drag.js",
+  "esm2015": "esm2015/ngx-visual-drag.js",
+  "fesm2015": "fesm2015/ngx-visual-drag.js",
+  "typings": "ngx-visual-drag.d.ts",
+  "metadata": "ngx-visual-drag.metadata.json",
+  "sideEffects": false
+}
