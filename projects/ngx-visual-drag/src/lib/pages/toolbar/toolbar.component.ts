@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { ComponentDataService } from '../../core/component/component-data.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { ComponentDataService } from '../../core/component/component-data.servic
   encapsulation: ViewEncapsulation.None,
 })
 export class ToolbarComponent implements OnInit {
-  constructor(public componentDataService: ComponentDataService) {}
+  isShowPreview: boolean = false;
+  constructor(
+    public componentDataService: ComponentDataService,
+    private message: NzMessageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -18,5 +23,22 @@ export class ToolbarComponent implements OnInit {
 
   undo() {
     this.componentDataService.undo();
+  }
+
+  save() {
+    this.componentDataService.save();
+  }
+
+  clearCanvas() {
+    this.componentDataService.clearCanvas();
+  }
+
+  preview() {
+    this.isShowPreview = true;
+    this.componentDataService.setEditMode('read');
+  }
+
+  closePreview() {
+    this.isShowPreview = false;
   }
 }

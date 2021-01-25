@@ -1,0 +1,11 @@
+<div class="bg" *ngIf="isShowPreview">
+    <button (click)="close()" class="close" nz-button>关闭</button>
+    <div class="canvas-container">
+        <div class="canvas"
+            [ngStyle]="{ width: componentDataService.canvasStyleData.width + 'px', height: componentDataService.canvasStyleData.height + 'px' }">
+
+            <Component-wrapper *ngFor="let item of componentDataService.componentData" [config]="item">
+            </Component-wrapper>
+        </div>
+    </div>
+</div>

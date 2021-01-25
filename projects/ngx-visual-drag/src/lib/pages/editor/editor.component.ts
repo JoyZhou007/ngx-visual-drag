@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ComponentDataService } from '../../core/component/component-data.service';
-import { ComponentDataStyleType } from '../../types/component-type';
+import { ComponentBaseStyle } from '../../types/component-type';
 import getStyle from '../../utils/style';
 
 @Component({
@@ -34,7 +34,7 @@ export class EditorComponent implements OnInit {
     };
   }
 
-  getComponentStyle(style: ComponentDataStyleType) {
+  getComponentStyle(style: ComponentBaseStyle) {
     return getStyle(style, ['top', 'left', 'width', 'height', 'rotate']);
   }
 }

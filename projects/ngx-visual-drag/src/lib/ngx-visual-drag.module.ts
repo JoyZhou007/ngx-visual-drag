@@ -11,6 +11,8 @@ import { ContextMenuComponent } from './pages/editor/context-menu/context-menu.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarklineComponent } from './pages/editor/markline/markline.component';
 import { AttrListComponent } from './pages/attr-list/attr-list.component';
+import { PreviewComponent } from './pages/editor/preview/preview.component';
+import { ComponentWrapperComponent } from './pages/editor/component-wrapper/component-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AttrListComponent } from './pages/attr-list/attr-list.component';
     ContextMenuComponent,
     MarklineComponent,
     AttrListComponent,
+    PreviewComponent,
+    ComponentWrapperComponent,
   ],
   imports: [BrowserAnimationsModule, SharedModule],
   exports: [NgxVisualDragComponent],

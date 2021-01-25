@@ -22,6 +22,14 @@
       right: 0;
       top: 0;
       padding: 0 15px;
+
+      .tabset {
+        height: 100%;
+        .ant-tabs-content-holder {
+          height: 100%;
+          overflow: auto;
+        }
+      }
     }
 
     .center {

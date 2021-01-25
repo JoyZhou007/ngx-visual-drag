@@ -5,6 +5,7 @@ import {
   OnInit,
   QueryList,
   ViewChildren,
+  ViewEncapsulation,
 } from '@angular/core';
 import { ComponentDataService } from '../../../core/component/component-data.service';
 import { cos, sin } from '../../../utils/translate';
@@ -13,6 +14,7 @@ import { cos, sin } from '../../../utils/translate';
   selector: 'Markline',
   templateUrl: './markline.component.html',
   styleUrls: ['./markline.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MarklineComponent implements OnInit, AfterContentInit {
   lines = ['xt', 'xc', 'xb', 'yl', 'yc', 'yr']; // 分别对应三条横线和三条竖线

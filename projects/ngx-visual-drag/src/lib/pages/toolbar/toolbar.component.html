@@ -4,9 +4,9 @@
         <button nz-button (click)="redo()" class="mr-20">重做</button>
         <label for="input" class="insert">插入图片</label>
         <input type="file" id="input" hidden />
-        <button nz-button style="margin-left: 10px;" class="mr-20">预览</button>
-        <button nz-button class="mr-20">保存</button>
-        <button nz-button>清空画布</button>
+        <button nz-button style="margin-left: 10px;" class="mr-20" (click)="preview()">预览</button>
+        <button nz-button class="mr-20" (click)="save()">保存</button>
+        <button nz-button (click)="clearCanvas()">清空画布</button>
         <div class="canvas-config">
             <span>画布大小</span>
             <input nz-input [(ngModel)]="componentDataService.canvasStyleData.width">
@@ -17,4 +17,5 @@
 
     <!-- 预览 -->
     <!-- <Preview v-model="isShowPreview" @change="handlePreviewChange" /> -->
+    <Preview [isShowPreview]="isShowPreview" (OutClose)="closePreview()"></Preview>
 </div>

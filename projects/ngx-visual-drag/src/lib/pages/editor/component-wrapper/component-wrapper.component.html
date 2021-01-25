@@ -1,0 +1,10 @@
+<div (click)="handleClick()" class="component">
+    <!-- <component class="conponent" :is="config.component" :style="getStyle(config.style)" :propValue="config.propValue" /> -->
+    <ng-container [ngSwitch]="config.component">
+        <ng-container *ngSwitchCase="'v-button'">
+            <v-button [propValue]="config.propValue" [absoulte]="true" [vStyle]="getComponentStyle(config.style)">
+            </v-button>
+        </ng-container>
+        <ng-container *ngSwitchDefault>output2</ng-container>
+    </ng-container>
+</div>

@@ -2,25 +2,29 @@
 
 /*---------------------------atom style------------------------------------*/
 @for $i from 10 to 30 {
-    .mt-#{$i} {
-      margin-top: #{$i}px !important;
-    }
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
   }
-  
-  @for $i from 10 to 30 {
-    .mr-#{$i} {
-      margin-right: #{$i}px !important;
-    }
+}
+
+@for $i from 10 to 30 {
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
   }
-  
-  @for $i from 10 to 30 {
-    .mb-#{$i} {
-      margin-bottom: #{$i}px !important;
-    }
+}
+
+@for $i from 10 to 30 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
   }
-  
-  @for $i from 10 to 30 {
-    .ml-#{$i} {
-      margin-left: #{$i}px !important;
-    }
+}
+
+@for $i from 10 to 30 {
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
   }
+}
+
+.absoulte {
+  position: absolute;
+}

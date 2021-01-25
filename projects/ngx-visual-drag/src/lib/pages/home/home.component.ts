@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ComponentDataService } from '../../core/component/component-data.service';
 import componentList from '../../core/custom-component/component-list';
+import { StorageData } from '../../types/component-type';
 import generateID from '../../utils/generateID';
 import { deepCopy } from '../../utils/utils';
 
@@ -11,9 +12,12 @@ import { deepCopy } from '../../utils/utils';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
+  @Input() data: StorageData;
   constructor(public componentDataService: ComponentDataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.componentDataService.restore(this.data);
+  }
 
   handleDrop(e) {
     e.preventDefault();

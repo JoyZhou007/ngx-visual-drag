@@ -2,8 +2,8 @@ import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ComponentDataService } from '../../../core/component/component-data.service';
 import {
-  ComponentDataStyleType,
-  ComponentDataType,
+  ComponentBaseStyle,
+  ComponentBaseData,
 } from '../../../types/component-type';
 import calculateComponentPositonAndSize from '../../../utils/calculateComponentPositonAndSize';
 
@@ -15,8 +15,8 @@ import calculateComponentPositonAndSize from '../../../utils/calculateComponentP
 })
 export class ShapeComponent implements OnInit {
   @Input() active: boolean = false;
-  @Input() element: ComponentDataType;
-  @Input() defaultStyle: ComponentDataStyleType;
+  @Input() element: ComponentBaseData;
+  @Input() defaultStyle: ComponentBaseStyle;
   @Input() index: number;
   cursors = {};
   pointList: string[] = ['lt', 't', 'rt', 'r', 'rb', 'b', 'lb', 'l']; // 八个方向
@@ -46,7 +46,7 @@ export class ShapeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getShapeStyle(style: ComponentDataStyleType) {
+  getShapeStyle(style: ComponentBaseStyle) {
     const result = { ...style };
     if (result.width) {
       result.width += 'px';
@@ -97,7 +97,7 @@ export class ShapeComponent implements OnInit {
       pos.left = curX - startX + startLeft;
 
       // 修改当前组件样式
-      this.componentDataService.shapeStyle.next(pos);
+      this.componentDataService.$shapeStyle.next(pos);
       // 等更新完当前组件的样式并绘制到屏幕后再判断是否需要吸附
       // 如果不使用 $nextTick，吸附后将无法移动
       // this.$nextTick(() => {
@@ -187,7 +187,7 @@ export class ShapeComponent implements OnInit {
         symmetricPoint,
       });
 
-      this.componentDataService.shapeStyle.next(style);
+      this.componentDataService.$shapeStyle.next(style);
     };
 
     const up = () => {
