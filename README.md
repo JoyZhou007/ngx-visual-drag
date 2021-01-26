@@ -1,3 +1,7 @@
+# NgxVisualDrag
+
+This library was a visual drag component develop by angular
+
 # Installation
 
     npm i ngx-visual-drag
@@ -56,5 +60,3 @@
 ## Usage
 
     <lib-ngx-visual-drag [data]="data" (onDataSave)="onDataSave($event)"></lib-ngx-visual-drag>
-
-
