@@ -1,24 +1,62 @@
 # NgxVisualDrag
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.9.
+This library was a visual drag component develop by angular
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name --project ngx-visual-drag` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-visual-drag`.
-> Note: Don't forget to add `--project ngx-visual-drag` or else it will be added to the default project in your `angular.json` file. 
+    npm i ngx-visual-drag
 
-## Build
+## Params
 
-Run `ng build ngx-visual-drag` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [data] 传入组件的数据
 
-## Publishing
+        StorageData {
+            canvasData: {
+                component: string; // 组件名称
+                label: string; // 左侧组件列表中显示的名字
+                propValue: string; // 组件所使用的值
+                icon: string; // 左侧组件列表中显示的名字
+                animations: any[]; // 动画列表
+                events: Object; // 事件列表
+                id: number;
+                style: {
+                    width: any;
+                    height: any;
+                    fontSize: number;
+                    fontWeight: number;
+                    lineHeight: string;
+                    letterSpacing: number;
+                    textAlign: string;
+                    color: string;
+                    backgroundColor: string;
+                    borderColor: string;
+                    borderRadius: string;
+                    borderWidth: string;
+                    left: any;
+                    opacity: number;
+                    rotate: any;
+                    top: any;
+                    };
+               }[];
+            canvasStyle:   // 页面全局数据
+                width: number;
+                height: number;;
+        }
 
-After building your library with `ng build ngx-visual-drag`, go to the dist folder `cd dist/ngx-visual-drag` and run `npm publish`.
+- (onDataSave) 画布保存时的回调 `EventEmitter<StorageData>`
 
-## Running unit tests
+## Import Module
 
-Run `ng test ngx-visual-drag` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    @NgModule({
+        declarations: [AppComponent],
+        imports: [
+            ....,
+            NgxVisualDragModule,
+        ],
+        providers: [],
+        })
+    export class AppModule {}
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <lib-ngx-visual-drag [data]="data" (onDataSave)="onDataSave($event)"></lib-ngx-visual-drag>

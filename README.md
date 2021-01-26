@@ -1,27 +1,60 @@
-# VisualDragDemo
+# Installation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+    npm i ngx-visual-drag
 
-## Development server
+## Params
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [data] 传入组件的数据
 
-## Code scaffolding
+        StorageData {
+            canvasData: {
+                component: string; // 组件名称
+                label: string; // 左侧组件列表中显示的名字
+                propValue: string; // 组件所使用的值
+                icon: string; // 左侧组件列表中显示的名字
+                animations: any[]; // 动画列表
+                events: Object; // 事件列表
+                id: number;
+                style: {
+                    width: any;
+                    height: any;
+                    fontSize: number;
+                    fontWeight: number;
+                    lineHeight: string;
+                    letterSpacing: number;
+                    textAlign: string;
+                    color: string;
+                    backgroundColor: string;
+                    borderColor: string;
+                    borderRadius: string;
+                    borderWidth: string;
+                    left: any;
+                    opacity: number;
+                    rotate: any;
+                    top: any;
+                    };
+               }[];
+            canvasStyle:   // 页面全局数据
+                width: number;
+                height: number;;
+        }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- (onDataSave) 画布保存时的回调 `EventEmitter<StorageData>`
 
-## Build
+## Import Module
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    @NgModule({
+        declarations: [AppComponent],
+        imports: [
+            ....,
+            NgxVisualDragModule,
+        ],
+        providers: [],
+        })
+    export class AppModule {}
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <lib-ngx-visual-drag [data]="data" (onDataSave)="onDataSave($event)"></lib-ngx-visual-drag>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
